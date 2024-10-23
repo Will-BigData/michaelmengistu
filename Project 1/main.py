@@ -113,7 +113,7 @@ def handle_view_orders():
         print("\nOrder History:")
         for order in orders:
             print(f"Order ID: {order['order_id']}, Book: {order['title']}, Quantity: {order['quantity']}, "
-                  f"Total Price: ${order['total_price']}, Status: {order['status']}, Date: {order['created_at']}")
+                  f"Total Price: ${order['total_price']}, Status: {order['status']}, Date: {order['order_date']}")
     else:
         print("No orders found.")
 

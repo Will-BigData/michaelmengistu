@@ -106,11 +106,11 @@ def view_order_history(user_id):
         cursor = connection.cursor(dictionary=True)
         try:
             cursor.execute("""
-                SELECT o.order_id, b.title, o.quantity, o.total_price, o.status, o.created_at
+                SELECT o.order_id, b.title, o.quantity, o.total_price, o.status, o.order_date
                 FROM Orders o
                 JOIN Books b ON o.book_id = b.book_id
                 WHERE o.user_id = %s
-                ORDER BY o.created_at DESC
+                ORDER BY o.order_date DESC
             """, (user_id,))
             orders = cursor.fetchall()
             return orders
