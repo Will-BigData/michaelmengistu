@@ -1,0 +1,24 @@
+2024-10-23 14:16:08,991 - INFO - Starting the Bookstore Application
+2024-10-23 14:16:19,863 - INFO - package: mysql.connector.plugins
+2024-10-23 14:16:19,863 - INFO - plugin_name: mysql_native_password
+2024-10-23 14:16:19,864 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-23 14:16:20,005 - INFO - Connected to the database successfully.
+2024-10-23 14:16:33,509 - INFO - Connected to the database successfully.
+2024-10-23 15:17:00,411 - INFO - Starting the Bookstore Application
+2024-10-23 15:17:32,558 - INFO - package: mysql.connector.plugins
+2024-10-23 15:17:32,558 - INFO - plugin_name: mysql_native_password
+2024-10-23 15:17:32,559 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-23 15:17:32,702 - INFO - Connected to the database successfully.
+2024-10-23 15:19:06,683 - INFO - Connected to the database successfully.
+2024-10-23 15:20:11,889 - INFO - Connected to the database successfully.
+2024-10-23 15:20:19,848 - INFO - Connected to the database successfully.
+2024-10-23 15:20:33,468 - INFO - Connected to the database successfully.
+2024-10-23 15:20:55,112 - INFO - Connected to the database successfully.
+2024-10-23 15:20:59,636 - INFO - Connected to the database successfully.
+2024-10-23 15:25:27,353 - INFO - Starting the Bookstore Application
+2024-10-23 15:25:35,152 - INFO - package: mysql.connector.plugins
+2024-10-23 15:25:35,152 - INFO - plugin_name: mysql_native_password
+2024-10-23 15:25:35,153 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-23 15:25:35,286 - INFO - Connected to the database successfully.
+2024-10-23 15:25:39,029 - INFO - Connected to the database successfully.
+2024-10-23 15:28:16,004 - INFO - Bookstore Application has ended

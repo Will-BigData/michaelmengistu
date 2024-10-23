@@ -4,6 +4,8 @@ import logging
 
 current_user = None
 
+
+
 def main_menu():
     while True:
         print("\nWelcome to the Bookstore!")
@@ -51,8 +53,7 @@ def user_menu():
 
         if choice == '1':
             books = view_books()
-            for book in books:
-                print(f"{book['book_id']}: {book['title']} by {book['author']} - ${book['price']}, stock_quantity: {book['stock_quantity']}")
+            print_books(books)
         elif choice == '2':
             handle_purchase()
         elif choice == '3':
@@ -75,8 +76,7 @@ def admin_menu():
 
         if choice == '1':
             books = view_books()
-            for book in books:
-                print(f"{book['book_id']}: {book['title']} by {book['author']} - ${book['price']}")
+            print_books(books)
         elif choice == '2':
             handle_add_book()
         elif choice == '3':
@@ -140,6 +140,15 @@ def handle_manage_users():
             break
         else:
             print("Invalid option. Please try again.")
+
+
+
+def print_books( books ):
+    for book in books:
+        print(f"{book['book_id']}: {book['title']} by {book['author']} - ${book['price']} stock_quantity: {book['stock_quantity']}")
+
+
+
 
 if __name__ == '__main__':
     logging.info("Starting the Bookstore Application")
