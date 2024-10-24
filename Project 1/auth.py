@@ -83,3 +83,17 @@ def delete_user(user_id):
 
 
 
+def user_exists(user_id):
+    connection = get_db_connection()
+    if connection:
+        cursor = connection.cursor()
+        try:
+            cursor.execute("SELECT COUNT(*) FROM Users WHERE user_id = %s", (user_id,))
+            count = cursor.fetchone()[0]
+            return count > 0
+        except Exception as e:
+            print(f"Error checking user existence: {e}")
+            return False
+        finally:
+            cursor.close()
+            connection.close()
