@@ -188,16 +188,16 @@ def print_books(books):
 
     # Define headers for the table
     headers = ["Book ID", "Title", "Author", "Genre", "Price", "Stock Quantity", "Publication Date"]
-    
+
     # Determine column widths based on the longest item in each column
     column_widths = [
-        max(len(headers[0]), max(len(str(book['book_id'])) for book in books)),
-        max(len(headers[1]), max(len(str(book['title'])) for book in books)),
-        max(len(headers[2]), max(len(str(book['author'])) for book in books)),
-        max(len(headers[3]), max(len(str(book['genre'])) for book in books)),
-        max(len(headers[4]), max(len(f"${book['price']:.2f}") for book in books)),
-        max(len(headers[5]), max(len(str(book['stock_quantity'])) for book in books)),
-        max(len(headers[6]), max(len(str(book['publication_date'])) for book in books))
+        max(len(headers[0]), max(len(str(book['book_id'] or '')) for book in books)),
+        max(len(headers[1]), max(len(str(book['title'] or '')) for book in books)),
+        max(len(headers[2]), max(len(str(book['author'] or '')) for book in books)),
+        max(len(headers[3]), max(len(str(book['genre'] or '')) for book in books)),
+        max(len(headers[4]), max(len(f"${book['price']:.2f}" if book['price'] is not None else '') for book in books)),
+        max(len(headers[5]), max(len(str(book['stock_quantity'] if book['stock_quantity'] is not None else '')) for book in books)),
+        max(len(headers[6]), max(len(str(book['publication_date'] or '')) for book in books))
     ]
 
     # Create a format string for consistent column width
@@ -211,15 +211,14 @@ def print_books(books):
     # Print each book in a CSV-like format
     for book in books:
         print(format_string.format(
-            book['book_id'],
-            book['title'],
-            book['author'],
-            book['genre'],
-            f"${book['price']:.2f}",
-            book['stock_quantity'],
-            book['publication_date']
+            str(book['book_id'] or ''),
+            str(book['title'] or ''),
+            str(book['author'] or ''),
+            str(book['genre'] or ''),
+            f"${book['price']:.2f}" if book['price'] is not None else '',
+            str(book['stock_quantity'] if book['stock_quantity'] is not None else ''),
+            str(book['publication_date'] or '')
         ))
-
 
 
 
