@@ -22,14 +22,13 @@ def add_book(title, author, genre, price, stock_quantity, publication_date):
 
 
 #Update a book:
-def update_book(book_id, **kwargs):
+def update_book(book_id,title,author,genre,price,stock_quantity,publication_date):
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
         try:
-            updates = ", ".join(f"{k} = %s" for k in kwargs.keys())
-            sql = f"UPDATE Books SET {updates} WHERE book_id = %s"
-            cursor.execute(sql, list(kwargs.values()) + [book_id])
+            update = "UPDATE Books SET title =  %s, author =  %s, genre =  %s, price =  %s, stock_quantity =  %s, publication_date=  %s WHERE book_id =  %s"
+            cursor.execute( update, (title,author,genre,price,stock_quantity,publication_date,book_id) )
             connection.commit()
             print("Book updated successfully.")
         except Exception as e:

@@ -154,14 +154,7 @@ def handle_update_book():
             stock_quantity = 0
     
         update_book(
-            book_id,
-            title,
-            author,
-            genre,
-            price,
-            stock_quantity,
-            publication_date
-        )
+            book_id,title,author,genre,price,stock_quantity,publication_date)
     else:
         print("Invalid book ID. Book does not exist.")
 
