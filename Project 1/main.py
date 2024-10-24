@@ -143,21 +143,24 @@ def handle_update_book():
     book_id = get_int_input("Enter the book ID to update: ")
     if(book_id is not None and book_exists(book_id)):
 
-        title = input("Enter new title (leave blank to keep unchanged): ")
-        author = input("Enter new author (leave blank to keep unchanged): ")
-        genre = input("Enter new genre (leave blank to keep unchanged): ")
-        price = get_float_input("Enter new price (leave blank to keep unchanged): ")
-        stock_quantity = get_int_input("Enter new stock quantity (leave blank to keep unchanged): ")
-        publication_date = get_date_input("Enter new publication date (YYYY-MM-DD, leave blank to keep unchanged): ")
-
+        title = input("Enter new title: ")
+        author = input("Enter new author: ")
+        genre = input("Enter new genre: ")
+        price = get_float_input("Enter new price: ")
+        stock_quantity = get_int_input("Enter new stock quantity: ")
+        publication_date = get_date_input("Enter new publication date (YYYY-MM-DD): ")
+        if stock_quantity is not None and stock_quantity < 0:
+            print("Stock quantity cannot be negative. Setting it to 0.")
+            stock_quantity = 0
+    
         update_book(
             book_id,
-            title=title if title else None,
-            author=author if author else None,
-            genre=genre if genre else None,
-            price=float(price) if price else None,
-            stock_quantity=int(stock_quantity) if stock_quantity else None,
-            publication_date=publication_date if publication_date else None
+            title,
+            author,
+            genre,
+            price,
+            stock_quantity,
+            publication_date
         )
     else:
         print("Invalid book ID. Book does not exist.")
