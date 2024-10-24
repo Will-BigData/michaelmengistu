@@ -32,3 +32,41 @@
 2024-10-23 15:39:32,852 - INFO - Connected to the database successfully.
 2024-10-23 15:41:20,383 - INFO - Connected to the database successfully.
 2024-10-23 16:34:50,986 - INFO - Bookstore Application has ended
+2024-10-23 17:11:42,258 - INFO - Starting the Bookstore Application
+2024-10-23 17:11:47,402 - INFO - package: mysql.connector.plugins
+2024-10-23 17:11:47,403 - INFO - plugin_name: mysql_native_password
+2024-10-23 17:11:47,404 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-23 17:11:47,554 - INFO - Connected to the database successfully.
+2024-10-23 17:12:04,603 - INFO - Connected to the database successfully.
+2024-10-23 17:12:17,782 - INFO - Connected to the database successfully.
+2024-10-23 17:12:26,415 - INFO - Connected to the database successfully.
+2024-10-23 17:12:28,891 - INFO - Connected to the database successfully.
+2024-10-23 17:15:30,315 - INFO - Connected to the database successfully.
+2024-10-23 17:15:30,503 - INFO - Book 'Green Green Grass' added to inventory.
+2024-10-23 17:15:34,801 - INFO - Connected to the database successfully.
+2024-10-23 17:16:23,636 - INFO - Connected to the database successfully.
+2024-10-23 17:18:12,407 - INFO - Bookstore Application has ended
+2024-10-24 08:14:04,705 - INFO - Starting the Bookstore Application
+2024-10-24 08:14:36,315 - INFO - package: mysql.connector.plugins
+2024-10-24 08:14:36,316 - INFO - plugin_name: mysql_native_password
+2024-10-24 08:14:36,317 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-24 08:14:36,461 - INFO - Connected to the database successfully.
+2024-10-24 08:14:51,958 - INFO - Connected to the database successfully.
+2024-10-24 08:14:52,207 - INFO - Order placed by user_id 7 for book_id 10 (quantity: 1).
+2024-10-24 08:14:56,102 - INFO - Connected to the database successfully.
+2024-10-24 08:18:53,757 - INFO - Connected to the database successfully.
+2024-10-24 08:20:13,906 - INFO - Connected to the database successfully.
+2024-10-24 08:20:14,050 - WARNING - Failed order attempt due to insufficient stock for book_id 101.
+2024-10-24 08:20:38,156 - INFO - Connected to the database successfully.
+2024-10-24 08:26:00,614 - INFO - Bookstore Application has ended
+2024-10-24 08:26:03,808 - INFO - Starting the Bookstore Application
+2024-10-24 08:26:10,716 - INFO - package: mysql.connector.plugins
+2024-10-24 08:26:10,716 - INFO - plugin_name: mysql_native_password
+2024-10-24 08:26:10,717 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-24 08:26:10,850 - INFO - Connected to the database successfully.
+2024-10-24 08:26:29,253 - INFO - Connected to the database successfully.
+2024-10-24 08:26:29,387 - WARNING - Failed order attempt due to insufficient stock for book_id 101.
+2024-10-24 08:28:12,052 - INFO - Connected to the database successfully.
+2024-10-24 08:28:55,901 - INFO - Connected to the database successfully.
+2024-10-24 08:28:56,036 - ERROR - Error creating order: 'NoneType' object is not subscriptable
+2024-10-24 08:30:43,007 - INFO - Bookstore Application has ended

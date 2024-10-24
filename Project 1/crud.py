@@ -57,8 +57,10 @@ def create_order(user_id, book_id, quantity):
                 connection.commit()
                 logging.info(f"Order placed by user_id {user_id} for book_id {book_id} (quantity: {quantity}).")
             else:
+                print(f"Sorry, we only have {book[1]} in stock. Please try to reorder again.")
                 logging.warning(f"Failed order attempt due to insufficient stock for book_id {book_id}.")
         except Exception as e:
+            print(f"Sorry, book ID = {book_id} does not exist. Please try again.")
             logging.error(f"Error creating order: {e}")
         finally:
             cursor.close()
