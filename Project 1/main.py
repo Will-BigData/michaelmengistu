@@ -1,5 +1,5 @@
 from auth import sign_up, login, view_all_users, promote_to_admin, delete_user, user_exists
-from crud import add_book, view_books, delete_book, create_order, update_book, view_order_history
+from crud import add_book, view_books, delete_book, create_order, update_book, view_order_history, book_exists
 from utils import get_date_input, get_float_input, get_int_input
 import logging
 
@@ -118,7 +118,7 @@ def handle_delete_book():
 
 def handle_purchase():
     book_id = get_int_input("Enter the book ID to purchase: ")
-    if book_id is None:
+    if book_id is None and book_exists(book_id):
         print("Invalid book ID. Please enter a valid number.")
         return
 
@@ -141,22 +141,27 @@ def handle_view_orders():
 
 def handle_update_book():
     book_id = get_int_input("Enter the book ID to update: ")
-    title = input("Enter new title (leave blank to keep unchanged): ")
-    author = input("Enter new author (leave blank to keep unchanged): ")
-    genre = input("Enter new genre (leave blank to keep unchanged): ")
-    price = get_float_input("Enter new price (leave blank to keep unchanged): ")
-    stock_quantity = get_int_input("Enter new stock quantity (leave blank to keep unchanged): ")
-    publication_date = get_date_input("Enter new publication date (YYYY-MM-DD, leave blank to keep unchanged): ")
+    if(book_id is not None and book_exists(book_id)):
 
-    update_book(
-        book_id,
-        title=title if title else None,
-        author=author if author else None,
-        genre=genre if genre else None,
-        price=float(price) if price else None,
-        stock_quantity=int(stock_quantity) if stock_quantity else None,
-        publication_date=publication_date if publication_date else None
-    )
+        title = input("Enter new title (leave blank to keep unchanged): ")
+        author = input("Enter new author (leave blank to keep unchanged): ")
+        genre = input("Enter new genre (leave blank to keep unchanged): ")
+        price = get_float_input("Enter new price (leave blank to keep unchanged): ")
+        stock_quantity = get_int_input("Enter new stock quantity (leave blank to keep unchanged): ")
+        publication_date = get_date_input("Enter new publication date (YYYY-MM-DD, leave blank to keep unchanged): ")
+
+        update_book(
+            book_id,
+            title=title if title else None,
+            author=author if author else None,
+            genre=genre if genre else None,
+            price=float(price) if price else None,
+            stock_quantity=int(stock_quantity) if stock_quantity else None,
+            publication_date=publication_date if publication_date else None
+        )
+    else:
+        print("Invalid book ID. Book does not exist.")
+
 
 def handle_view_all_users():
     users = view_all_users()
