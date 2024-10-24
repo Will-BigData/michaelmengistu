@@ -110,12 +110,23 @@ def handle_add_book():
     add_book(title, author, genre, price, stock_quantity, publication_date)
 
 def handle_delete_book():
-    book_id = int(input("Enter the book ID to delete: "))
-    delete_book(book_id)
+    book_id = get_int_input("Enter the book ID to delete: ")
+    if book_id is not None:
+        delete_book(book_id)
+    else:
+        print("Invalid book ID. Please enter a valid number.")
 
 def handle_purchase():
-    book_id = int(input("Enter the book ID to purchase: "))
-    quantity = int(input("Enter quantity: "))
+    book_id = get_int_input("Enter the book ID to purchase: ")
+    if book_id is None:
+        print("Invalid book ID. Please enter a valid number.")
+        return
+
+    quantity = get_int_input("Enter quantity: ")
+    if quantity is None or quantity <= 0:
+        print("Invalid quantity. Please enter a positive integer.")
+        return
+
     create_order(current_user['user_id'], book_id, quantity)
 
 def handle_view_orders():
