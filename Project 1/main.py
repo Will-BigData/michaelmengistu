@@ -1,5 +1,6 @@
 from auth import sign_up, login, view_all_users, promote_to_admin, delete_user
 from crud import add_book, view_books, delete_book, create_order, update_book, view_order_history
+from utils import get_date_input, get_float_input, get_int_input
 import logging
 
 current_user = None
@@ -103,9 +104,9 @@ def handle_add_book():
     title = input("Enter book title: ")
     author = input("Enter author: ")
     genre = input("Enter genre: ")
-    price = float(input("Enter price: "))
-    stock_quantity = int(input("Enter stock quantity: "))
-    publication_date = input("Enter publication date (YYYY-MM-DD): ")
+    price = get_float_input("Enter price: ")
+    stock_quantity = get_int_input("Enter stock quantity: ")
+    publication_date = get_date_input("Enter publication date (YYYY-MM-DD): ")
     add_book(title, author, genre, price, stock_quantity, publication_date)
 
 def handle_delete_book():
@@ -128,13 +129,13 @@ def handle_view_orders():
         print("No orders found.")
 
 def handle_update_book():
-    book_id = int(input("Enter the book ID to update: "))
+    book_id = get_int_input("Enter the book ID to update: ")
     title = input("Enter new title (leave blank to keep unchanged): ")
     author = input("Enter new author (leave blank to keep unchanged): ")
     genre = input("Enter new genre (leave blank to keep unchanged): ")
-    price = input("Enter new price (leave blank to keep unchanged): ")
-    stock_quantity = input("Enter new stock quantity (leave blank to keep unchanged): ")
-    publication_date = input("Enter new publication date (YYYY-MM-DD, leave blank to keep unchanged): ")
+    price = get_float_input("Enter new price (leave blank to keep unchanged): ")
+    stock_quantity = get_int_input("Enter new stock quantity (leave blank to keep unchanged): ")
+    publication_date = get_date_input("Enter new publication date (YYYY-MM-DD, leave blank to keep unchanged): ")
 
     update_book(
         book_id,
@@ -164,6 +165,9 @@ def handle_delete_user():
 def print_books( books ):
     for book in books:
         print(f"{book['book_id']}: {book['title']} by {book['author']} - ${book['price']} stock_quantity: {book['stock_quantity']}")
+
+
+
 
 
 
