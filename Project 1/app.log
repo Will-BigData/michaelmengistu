@@ -42,3 +42,10 @@
 2024-10-24 13:48:19,439 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
 2024-10-24 13:48:19,574 - INFO - Connected to the database successfully.
 2024-10-24 13:48:23,998 - INFO - Connected to the database successfully.
+2024-10-24 13:50:43,444 - INFO - Starting the Bookstore Application
+2024-10-24 13:50:49,993 - INFO - package: mysql.connector.plugins
+2024-10-24 13:50:49,993 - INFO - plugin_name: mysql_native_password
+2024-10-24 13:50:49,994 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-24 13:50:50,129 - INFO - Connected to the database successfully.
+2024-10-24 13:50:51,573 - INFO - Connected to the database successfully.
+2024-10-24 13:53:46,947 - INFO - Bookstore Application has ended
