@@ -181,10 +181,44 @@ def handle_delete_user():
 
 
 
-def print_books( books ):
-    for book in books:
-        print(f"{book['book_id']}: {book['title']} by {book['author']} - ${book['price']} stock_quantity: {book['stock_quantity']}")
+def print_books(books):
+    if not books:
+        print("No books available.")
+        return
 
+    # Define headers for the table
+    headers = ["Book ID", "Title", "Author", "Genre", "Price", "Stock Quantity", "Publication Date"]
+    
+    # Determine column widths based on the longest item in each column
+    column_widths = [
+        max(len(headers[0]), max(len(str(book['book_id'])) for book in books)),
+        max(len(headers[1]), max(len(str(book['title'])) for book in books)),
+        max(len(headers[2]), max(len(str(book['author'])) for book in books)),
+        max(len(headers[3]), max(len(str(book['genre'])) for book in books)),
+        max(len(headers[4]), max(len(f"${book['price']:.2f}") for book in books)),
+        max(len(headers[5]), max(len(str(book['stock_quantity'])) for book in books)),
+        max(len(headers[6]), max(len(str(book['publication_date'])) for book in books))
+    ]
+
+    # Create a format string for consistent column width
+    format_string = " | ".join([f"{{:<{w}}}" for w in column_widths])
+    separator = "-+-".join(['-' * w for w in column_widths])
+
+    # Print the header
+    print(format_string.format(*headers))
+    print(separator)
+
+    # Print each book in a CSV-like format
+    for book in books:
+        print(format_string.format(
+            book['book_id'],
+            book['title'],
+            book['author'],
+            book['genre'],
+            f"${book['price']:.2f}",
+            book['stock_quantity'],
+            book['publication_date']
+        ))
 
 
 

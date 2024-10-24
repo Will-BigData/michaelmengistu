@@ -1,7 +1,6 @@
 CREATE DATABASE bookstore;
 
 USE bookstore;
-
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -29,6 +28,7 @@ CREATE TABLE Orders (
     quantity INT NOT NULL,
     total_price DECIMAL(10, 2) NOT NULL,
     status ENUM('completed', 'canceled') NOT NULL DEFAULT 'completed',
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (book_id) REFERENCES Books(book_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES Books(book_id) ON DELETE CASCADE
 );
+

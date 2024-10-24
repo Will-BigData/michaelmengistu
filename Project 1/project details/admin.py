@@ -6,5 +6,3 @@ password = "123456"
 hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
 print(hashed_password.decode('utf-8')) 
-
-#$2b$12$gk8wyyktBwuygqiYbG6OLu9eFGVUVw6lb0aLv8P33RoUk1cfCf3eO
