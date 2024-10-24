@@ -70,8 +70,11 @@ def admin_menu():
         print("1. View Books")
         print("2. Add a Book")
         print("3. Delete a Book")
-        print("4. Manage Users")
-        print("5. Log Out")
+        print("4. Update a Book")
+        print("5. View All Users")
+        print("6. Promote User to Admin")
+        print("7. Delete User")
+        print("8. Log Out")
         choice = input("Select an option: ")
 
         if choice == '1':
@@ -82,12 +85,19 @@ def admin_menu():
         elif choice == '3':
             handle_delete_book()
         elif choice == '4':
-            handle_manage_users()
+            handle_update_book()
         elif choice == '5':
+            handle_view_all_users()
+        elif choice == '6':
+            handle_promote_user()
+        elif choice == '7':
+            handle_delete_user()
+        elif choice == '8':
             print("Logging out...")
             break
         else:
             print("Invalid option. Please try again.")
+
 
 def handle_add_book():
     title = input("Enter book title: ")
@@ -117,29 +127,37 @@ def handle_view_orders():
     else:
         print("No orders found.")
 
-def handle_manage_users():
-    while True:
-        print("\nManage Users")
-        print("1. View All Users")
-        print("2. Promote User to Admin")
-        print("3. Delete User")
-        print("4. Back to Admin Menu")
-        choice = input("Select an option: ")
+def handle_update_book():
+    book_id = int(input("Enter the book ID to update: "))
+    title = input("Enter new title (leave blank to keep unchanged): ")
+    author = input("Enter new author (leave blank to keep unchanged): ")
+    genre = input("Enter new genre (leave blank to keep unchanged): ")
+    price = input("Enter new price (leave blank to keep unchanged): ")
+    stock_quantity = input("Enter new stock quantity (leave blank to keep unchanged): ")
+    publication_date = input("Enter new publication date (YYYY-MM-DD, leave blank to keep unchanged): ")
 
-        if choice == '1':
-            users = view_all_users()
-            for user in users:
-                print(f"{user['user_id']}: {user['username']} ({user['role']}) - {user['email']}")
-        elif choice == '2':
-            user_id = int(input("Enter the user ID to promote to admin: "))
-            promote_to_admin(user_id)
-        elif choice == '3':
-            user_id = int(input("Enter the user ID to delete: "))
-            delete_user(user_id)
-        elif choice == '4':
-            break
-        else:
-            print("Invalid option. Please try again.")
+    update_book(
+        book_id,
+        title=title if title else None,
+        author=author if author else None,
+        genre=genre if genre else None,
+        price=float(price) if price else None,
+        stock_quantity=int(stock_quantity) if stock_quantity else None,
+        publication_date=publication_date if publication_date else None
+    )
+
+def handle_view_all_users():
+    users = view_all_users()
+    for user in users:
+        print(f"{user['user_id']}: {user['username']} ({user['role']}) - {user['email']}")
+
+def handle_promote_user():
+    user_id = int(input("Enter the user ID to promote to admin: "))
+    promote_to_admin(user_id)
+
+def handle_delete_user():
+    user_id = int(input("Enter the user ID to delete: "))
+    delete_user(user_id)
 
 
 
