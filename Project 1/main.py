@@ -1,4 +1,4 @@
-from auth import sign_up, login, view_all_users, promote_to_admin, delete_user
+from auth import sign_up, login, view_all_users, promote_to_admin, delete_user, user_exists
 from crud import add_book, view_books, delete_book, create_order, update_book, view_order_history
 from utils import get_date_input, get_float_input, get_int_input
 import logging
@@ -164,12 +164,19 @@ def handle_view_all_users():
         print(f"{user['user_id']}: {user['username']} ({user['role']}) - {user['email']}")
 
 def handle_promote_user():
-    user_id = int(input("Enter the user ID to promote to admin: "))
-    promote_to_admin(user_id)
+    user_id = get_int_input("Enter the user ID to promote to admin: ")
+    if user_id is not None and user_exists(user_id):
+        promote_to_admin(user_id)
+    else:
+        print("Invalid user ID. User does not exist.")
+
 
 def handle_delete_user():
-    user_id = int(input("Enter the user ID to delete: "))
-    delete_user(user_id)
+    user_id = get_int_input("Enter the user ID to delete: ")
+    if user_id is not None and user_exists(user_id):
+        delete_user(user_id)
+    else:
+        print("Invalid user ID. User does not exist.")
 
 
 

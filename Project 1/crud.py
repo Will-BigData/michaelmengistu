@@ -122,3 +122,19 @@ def view_order_history(user_id):
         finally:
             cursor.close()
             connection.close()
+
+        
+def book_exists(book_id):
+    connection = get_db_connection()
+    if connection:
+        cursor = connection.cursor()
+        try:
+            cursor.execute("SELECT COUNT(*) FROM Books WHERE book_id = %s", (book_id,))
+            count = cursor.fetchone()[0]
+            return count > 0
+        except Exception as e:
+            print(f"Error checking book existence: {e}")
+            return False
+        finally:
+            cursor.close()
+            connection.close()
