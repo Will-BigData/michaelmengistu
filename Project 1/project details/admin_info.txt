@@ -1,4 +1,4 @@
-#This is so I can remember admin password since it hashed in the database
+#This is so I can remember admin password since it is hashed in the database
 #also admin password is in admin.py as well
 
 
