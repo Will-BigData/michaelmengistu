@@ -1,0 +1,7 @@
+#This is so I can remember admin password since it hashed in the database
+#also admin password is in admin.py as well
+
+
+admin username: admin
+
+password: 123456

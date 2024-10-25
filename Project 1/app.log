@@ -94,3 +94,33 @@
 2024-10-24 16:11:55,314 - INFO - Order placed by user_id 3 for book_id 16 (quantity: 2).
 2024-10-24 16:11:57,632 - INFO - Connected to the database successfully.
 2024-10-24 16:12:06,931 - INFO - Bookstore Application has ended
+2024-10-25 08:30:25,256 - INFO - Starting the Bookstore Application
+2024-10-25 08:30:46,012 - INFO - package: mysql.connector.plugins
+2024-10-25 08:30:46,012 - INFO - plugin_name: mysql_native_password
+2024-10-25 08:30:46,013 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-10-25 08:30:46,151 - INFO - Connected to the database successfully.
+2024-10-25 08:30:56,194 - INFO - Connected to the database successfully.
+2024-10-25 08:31:02,057 - INFO - Connected to the database successfully.
+2024-10-25 08:31:13,584 - INFO - Connected to the database successfully.
+2024-10-25 08:31:44,128 - INFO - Connected to the database successfully.
+2024-10-25 08:31:44,369 - INFO - Order placed by user_id 5 for book_id 50 (quantity: 2).
+2024-10-25 08:31:48,984 - INFO - Connected to the database successfully.
+2024-10-25 08:31:58,154 - INFO - Connected to the database successfully.
+2024-10-25 08:32:27,363 - INFO - Connected to the database successfully.
+2024-10-25 08:32:32,613 - INFO - Connected to the database successfully.
+2024-10-25 08:33:32,943 - INFO - Connected to the database successfully.
+2024-10-25 08:33:33,117 - INFO - Book 'example book again' added to inventory.
+2024-10-25 08:33:36,405 - INFO - Connected to the database successfully.
+2024-10-25 08:33:50,917 - INFO - Connected to the database successfully.
+2024-10-25 08:34:15,634 - INFO - Connected to the database successfully.
+2024-10-25 08:34:20,742 - INFO - Connected to the database successfully.
+2024-10-25 08:34:39,987 - INFO - Connected to the database successfully.
+2024-10-25 08:34:44,677 - INFO - Connected to the database successfully.
+2024-10-25 08:34:56,966 - INFO - Connected to the database successfully.
+2024-10-25 08:35:18,130 - INFO - Connected to the database successfully.
+2024-10-25 08:35:18,597 - INFO - Connected to the database successfully.
+2024-10-25 08:35:25,837 - INFO - Connected to the database successfully.
+2024-10-25 08:35:40,920 - INFO - Connected to the database successfully.
+2024-10-25 08:35:41,745 - INFO - Connected to the database successfully.
+2024-10-25 08:35:45,791 - INFO - Connected to the database successfully.
+2024-10-25 08:35:54,521 - INFO - Bookstore Application has ended
